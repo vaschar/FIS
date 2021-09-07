@@ -1,0 +1,73 @@
+[System]
+Name='DFSA_L1_N1'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=27
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='mom'
+
+[Input1]
+Name='MF1'
+Range=[0 1]
+NumMFs=3
+MF1='NoDependency':'gauss2mf',[0.1037 -0.07799 0.1037 0.07799]
+MF2='SlightDependency':'gauss2mf',[0.18 0.438124280243262 0.187 0.379]
+MF3='MediumToHighDependency':'gauss2mf',[0.136 1.02058201058201 0.136 1.08058201058201]
+
+[Input2]
+Name='MF2'
+Range=[0 1]
+NumMFs=3
+MF1='NoDependency':'gauss2mf',[0.1037 -0.07799 0.1037 0.07799]
+MF2='SlightDependency':'gauss2mf',[0.18 0.477806819925801 0.165 0.422]
+MF3='MediumToHighDependency':'gauss2mf',[0.136 0.982 0.136 1.04]
+
+[Input3]
+Name='MF3'
+Range=[0 1]
+NumMFs=3
+MF1='NoDependency':'gauss2mf',[0.1037 -0.07799 0.1037 0.07799]
+MF2='SlightDependency':'gauss2mf',[0.148 0.393 0.139411590703884 0.369047619047619]
+MF3='MediumToHighDependency':'gauss2mf',[0.136 0.982 0.136 1.04]
+
+[Output1]
+Name='DataFusion'
+Range=[0 1]
+NumMFs=3
+MF1='LowInformative':'trimf',[-0.4 0 0.4]
+MF2='MediumInformative':'trimf',[0.1 0.5 0.837301587301587]
+MF3='HighlyInformative':'trimf',[0.69973544973545 1 1.4]
+
+[Rules]
+1 1 1, 1 (1) : 1
+2 1 1, 1 (1) : 1
+1 2 1, 1 (1) : 1
+1 1 2, 1 (1) : 1
+1 1 3, 1 (1) : 1
+1 3 1, 1 (1) : 1
+3 1 1, 1 (1) : 1
+2 2 1, 1 (1) : 1
+2 1 2, 1 (1) : 1
+1 2 2, 1 (1) : 1
+2 2 2, 2 (1) : 1
+2 3 2, 2 (1) : 1
+3 2 2, 2 (1) : 1
+2 2 3, 2 (1) : 1
+2 3 3, 3 (1) : 1
+3 2 3, 3 (1) : 1
+3 3 2, 3 (1) : 1
+3 3 3, 3 (1) : 1
+3 3 1, 2 (1) : 1
+3 1 3, 2 (1) : 1
+1 3 3, 2 (1) : 1
+2 1 3, 2 (1) : 1
+2 3 1, 2 (1) : 1
+3 1 2, 2 (1) : 1
+1 2 3, 2 (1) : 1
+3 2 1, 2 (1) : 1
+1 3 2, 2 (1) : 1

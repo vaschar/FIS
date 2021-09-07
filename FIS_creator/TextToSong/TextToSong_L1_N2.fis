@@ -1,0 +1,73 @@
+[System]
+Name='TextToSong_L1_N2'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=27
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='mom'
+
+[Input1]
+Name='VTH'
+Range=[0 10]
+NumMFs=3
+MF1='low':'trimf',[-4 0 3]
+MF2='medium':'trimf',[0 5 10]
+MF3='high':'trapmf',[7 10 1000 1001]
+
+[Input2]
+Name='TH'
+Range=[0 10]
+NumMFs=3
+MF1='low':'trapmf',[-3.6 -0.4 3 5]
+MF2='mid':'trimf',[4 6 8]
+MF3='high':'trapmf',[6 8 20 21]
+
+[Input3]
+Name='STY'
+Range=[0 3]
+NumMFs=3
+MF1='low':'trapmf',[-1 0 1 2]
+MF2='mid':'trimf',[1 2 3]
+MF3='high':'trapmf',[2 3 10 11]
+
+[Output1]
+Name='svsMusical'
+Range=[0 1]
+NumMFs=3
+MF1='low':'trimf',[-0.4 0 0.4]
+MF2='medium':'trimf',[0.1 0.5 0.9]
+MF3='high':'trimf',[0.6 1 1.4]
+
+[Rules]
+1 1 1, 1 (1) : 1
+1 1 2, 2 (1) : 1
+1 1 3, 2 (1) : 1
+1 2 1, 1 (1) : 1
+1 2 2, 2 (1) : 1
+1 2 3, 2 (1) : 1
+1 3 1, 2 (1) : 1
+1 3 2, 2 (1) : 1
+1 3 3, 2 (1) : 1
+2 1 1, 1 (1) : 1
+2 1 2, 2 (1) : 1
+2 1 3, 2 (1) : 1
+2 2 1, 2 (1) : 1
+2 2 2, 2 (1) : 1
+2 2 3, 2 (1) : 1
+2 3 1, 1 (1) : 1
+2 3 2, 2 (1) : 1
+2 3 3, 3 (1) : 1
+3 1 1, 1 (1) : 1
+3 1 2, 2 (1) : 1
+3 1 3, 2 (1) : 1
+3 2 1, 1 (1) : 1
+3 2 2, 2 (1) : 1
+3 2 3, 3 (1) : 1
+3 3 1, 1 (1) : 1
+3 3 2, 2 (1) : 1
+3 3 3, 3 (1) : 1

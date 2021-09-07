@@ -1,0 +1,30 @@
+[System]
+Name='BodyWalloon_L1_N1'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=2
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='som'
+
+[Input1]
+Name='in1'
+Range=[0 1]
+NumMFs=2
+MF1='mf1':'trimf',[0 1 1]
+MF2='mf2':'trimf',[0 0 0]
+
+[Output1]
+Name='ou1'
+Range=[0 1]
+NumMFs=2
+MF1='mf3':'trimf',[0 1 1]
+MF2='mf1':'trimf',[0 0 0]
+
+[Rules]
+1, 1 (1) : 1
+2, 2 (1) : 1
